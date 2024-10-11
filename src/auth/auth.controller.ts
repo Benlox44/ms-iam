@@ -1,3 +1,4 @@
+
 import {
   Body,
   Controller,
@@ -59,5 +60,11 @@ export class AuthController {
       console.error('Error al verificar el token:', error);  
       throw new UnauthorizedException('Token inválido o inactivo');
     }
+  }
+
+  @Post('refresh')
+  @HttpCode(HttpStatus.OK)
+  refreshToken(@Body('refreshToken') refreshToken: string) {
+    return this.authService.refreshToken(refreshToken);
   }
 }
