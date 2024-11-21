@@ -34,7 +34,8 @@
     "g": "^2.0.1",
     "mongoose": "^8.6.0",
     "reflect-metadata": "^0.2.0",
-    "rxjs": "^7.8.1"
+    "rxjs": "^7.8.1",
+    "sharp": "^0.33.5"
   },
   "devDependencies": {
     "@nestjs/cli": "^10.4.5",
