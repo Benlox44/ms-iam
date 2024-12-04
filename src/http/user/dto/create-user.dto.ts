@@ -1,18 +1,18 @@
-import { IsEmail, IsNotEmpty, IsOptional } from 'class-validator';
+import { IsEmail, IsNotEmpty, IsOptional, IsString } from 'class-validator';
 
 export class CreateUserDto {
   @IsNotEmpty()
-  name?: string;
+  name!: string;
 
   @IsNotEmpty()
-  lastName?: string;
+  lastName!: string;
 
   @IsNotEmpty()
   @IsEmail()
-  email?: string;
+  email!: string;
 
   @IsNotEmpty()
-  password?: string;
+  password!: string;
 
   @IsOptional()
   phone?: number;
@@ -22,4 +22,8 @@ export class CreateUserDto {
 
   @IsOptional()
   addressAdditional?: string;
+
+  @IsOptional()
+  @IsString() // Validación para asegurarse de que sea un string
+  location?: string;
 }
